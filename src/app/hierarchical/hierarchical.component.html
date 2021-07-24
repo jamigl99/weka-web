@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>{{titulo}}</h1>
+
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Indice</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Tamaño</th>
+            <th scope="col">Porcentaje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let grupo of result.grupo">
+            <th scope="row"> {{grupo.indice}} </th>
+            <td>{{grupo.valor}}</td>
+            <td>{{grupo.tamanio}}</td>
+            <td>{{grupo.porcentaje}}</td>    
+        </tr>
+        </tbody>
+    </table>
+</div>
