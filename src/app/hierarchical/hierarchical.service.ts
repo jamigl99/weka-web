@@ -8,13 +8,16 @@ import { Result } from './result';
 })
 export class HierarchicalService {
 
-  private url:string="https://apiweka-springboot.herokuapp.com/api/hierarchical/?link=complete&clusters=3";
+  
+  private url:string="https://apiweka-springboot.herokuapp.com/api/hierarchical/";
 
+  
   constructor(private http:HttpClient) { }
 
-  //Obtener Resultados Hierarchical
-  obtenerResultados():Observable<Result>{
-    return this.http.get<Result>(this.url);
+
+
+  obtenerResultados(link:string,num:number):Observable<Result>{
+    return this.http.get<Result>(this.url, {params:{link: link,clusters:num}});
   }
 
 
